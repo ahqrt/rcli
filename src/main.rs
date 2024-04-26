@@ -26,11 +26,12 @@ struct CsvOpts {
     #[arg(short, long, default_value_t = ',')]
     delimiter: char,
 
-    #[arg(short, long, default_value_t = true)]
+    #[arg(long, default_value_t = true)]
     header: bool,
 }
 
 fn main() {
-    let aaa = "hello world";
-    println!("{}", aaa);
+    // parse opts from command line
+    let opts = Opts::parse();
+    print!("{:?}", opts)
 }
